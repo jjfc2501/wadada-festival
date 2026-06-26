@@ -1,0 +1,1008 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수(水)상한 페스티벌 | 와~다다다 가족 축제 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-light: #48CAE4;
+      --blue-main: #00B4D8;
+      --blue-dark: #0077B6;
+      --blue-deeper: #023E8A;
+      --yellow: #FFD60A;
+      --yellow-dark: #FFC300;
+      --orange: #FF9F1C;
+      --white: #FFFFFF;
+      --text-dark: #1A1A2E;
+      --text-gray: #555;
+      --card-bg: #F0F9FF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #90E0EF 0%, #00B4D8 40%, #0077B6 80%, #023E8A 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* water bubble animations */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      animation: rise linear infinite;
+    }
+    .bubble:nth-child(1)  { width:60px;  height:60px;  left:10%; animation-duration:8s;  animation-delay:0s; }
+    .bubble:nth-child(2)  { width:30px;  height:30px;  left:25%; animation-duration:11s; animation-delay:2s; }
+    .bubble:nth-child(3)  { width:80px;  height:80px;  left:50%; animation-duration:9s;  animation-delay:1s; }
+    .bubble:nth-child(4)  { width:40px;  height:40px;  left:70%; animation-duration:13s; animation-delay:3s; }
+    .bubble:nth-child(5)  { width:20px;  height:20px;  left:85%; animation-duration:7s;  animation-delay:0.5s; }
+    .bubble:nth-child(6)  { width:50px;  height:50px;  left:40%; animation-duration:10s; animation-delay:4s; }
+
+    @keyframes rise {
+      0%   { bottom:-100px; opacity:0; transform:scale(1); }
+      10%  { opacity:1; }
+      90%  { opacity:0.6; }
+      100% { bottom:110%; opacity:0; transform:scale(1.2); }
+    }
+
+    .hero-badge {
+      background: var(--yellow);
+      color: var(--text-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 6px 20px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+      display: inline-block;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-subtitle {
+      color: rgba(255,255,255,0.9);
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      font-weight: 500;
+      margin-bottom: 12px;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 10vw, 6.5rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      margin-bottom: 8px;
+    }
+
+    .hero-title .water {
+      color: var(--yellow);
+    }
+
+    .hero-name {
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 36px;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-info-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-bottom: 44px;
+    }
+
+    .hero-info-item {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 12px;
+      padding: 12px 22px;
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .hero-info-item .label {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .btn-hero-register {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--text-dark);
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 16px 40px;
+      border-radius: 999px;
+      text-decoration: none;
+      margin-bottom: 40px;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+    }
+    .btn-hero-register:hover {
+      background: var(--yellow-dark);
+      transform: scale(1.05);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.8rem;
+      animation: bounce 2s infinite;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── WAVE DIVIDER ── */
+    .wave-divider {
+      display: block;
+      width: 100%;
+      line-height: 0;
+      overflow: hidden;
+    }
+    .wave-divider svg { display: block; width: 100%; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 70px 20px; }
+    .section-inner { max-width: 960px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      background: var(--blue-main);
+      color: white;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    h2.section-title {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 40px;
+      color: var(--text-dark);
+    }
+    h2.section-title span { color: var(--blue-main); }
+
+    /* ── PROGRAMS ── */
+    .programs-bg {
+      background: linear-gradient(180deg, #E0F7FA 0%, #ffffff 100%);
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .program-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 24px rgba(0,119,182,0.10);
+      border-top: 4px solid var(--blue-main);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .program-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,119,182,0.18);
+    }
+    .program-card.highlight { border-top-color: var(--yellow-dark); }
+
+    .program-icon {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+    }
+    .program-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--blue-dark);
+    }
+    .program-card .tag-small {
+      display: inline-block;
+      font-size: 0.72rem;
+      background: #E0F7FA;
+      color: var(--blue-dark);
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .program-card.highlight .tag-small {
+      background: #FFF3CD;
+      color: #7d5a00;
+    }
+    .program-card p {
+      font-size: 0.88rem;
+      color: var(--text-gray);
+      line-height: 1.7;
+    }
+
+    .btn-program-apply {
+      display: inline-block;
+      background: var(--blue-main);
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 4px 14px rgba(0,180,216,0.35);
+    }
+    .btn-program-apply:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ── SCHEDULE ── */
+    .schedule-bg { background: var(--white); }
+
+    .schedule-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 10px 28px;
+      border-radius: 999px;
+      border: 2px solid var(--blue-main);
+      background: transparent;
+      color: var(--blue-main);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Noto Sans KR', sans-serif;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: var(--blue-main);
+      color: white;
+    }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 9px;
+      top: 8px;
+      bottom: 8px;
+      width: 3px;
+      background: linear-gradient(180deg, var(--blue-light), var(--blue-dark));
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--blue-main);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px var(--blue-main);
+    }
+    .timeline-item.always::before { background: var(--orange); box-shadow: 0 0 0 2px var(--orange); }
+
+    .timeline-time {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--blue-main);
+      margin-bottom: 4px;
+    }
+    .timeline-item.always .timeline-time { color: var(--orange); }
+
+    .timeline-box {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 16px 20px;
+    }
+    .timeline-item.always .timeline-box { background: #FFF3E0; }
+
+    .timeline-box h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .timeline-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .timeline-box ul li {
+      font-size: 0.88rem;
+      color: var(--text-gray);
+      padding: 2px 0;
+      padding-left: 14px;
+      position: relative;
+    }
+    .timeline-box ul li::before {
+      content: '·';
+      position: absolute;
+      left: 4px;
+      color: var(--blue-main);
+    }
+
+    /* ── REGISTRATION ── */
+    .register-bg {
+      background: linear-gradient(135deg, #023E8A 0%, #0077B6 50%, #00B4D8 100%);
+    }
+    .register-bg .section-tag { background: rgba(255,255,255,0.25); }
+    .register-bg h2.section-title { color: white; }
+    .register-bg h2.section-title span { color: var(--yellow); }
+
+    .register-desc {
+      color: rgba(255,255,255,0.85);
+      font-size: 1rem;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .register-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .register-card {
+      background: rgba(255,255,255,0.13);
+      backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 30px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .register-card .r-icon { font-size: 2.8rem; }
+    .register-card h3 {
+      color: white;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .register-card p {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .register-card .r-note {
+      font-size: 0.78rem;
+      color: var(--yellow);
+      font-weight: 600;
+    }
+
+    .btn-register {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--text-dark);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s;
+      margin-top: 4px;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .btn-register:hover {
+      background: var(--yellow-dark);
+      transform: scale(1.04);
+    }
+    .btn-register.disabled {
+      background: rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.6);
+      cursor: default;
+    }
+    .btn-register.disabled:hover { transform: none; }
+
+    /* ── LOCATION ── */
+    .location-bg { background: #F0F9FF; }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+    @media (max-width: 640px) {
+      .location-grid { grid-template-columns: 1fr; }
+    }
+
+    .map-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      aspect-ratio: 4/3;
+    }
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .location-info h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 16px;
+    }
+    .location-detail {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .location-detail .l-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .location-detail div {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--text-gray);
+    }
+    .location-detail div strong {
+      color: var(--text-dark);
+      display: block;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .btn-map {
+      display: inline-block;
+      margin-top: 10px;
+      background: var(--blue-main);
+      color: white;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 11px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-map:hover { background: var(--blue-dark); }
+
+    /* ── CONTACT ── */
+    .contact-bg { background: white; }
+    .contact-box {
+      background: linear-gradient(135deg, #E0F7FA, #B3E5FC);
+      border-radius: 24px;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .contact-info h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--blue-darker, var(--blue-dark));
+      margin-bottom: 10px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+    .contact-item .c-icon { font-size: 1.2rem; }
+    .contact-item a {
+      color: var(--blue-dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-item a:hover { text-decoration: underline; }
+
+    .contact-org {
+      text-align: center;
+    }
+    .contact-org img {
+      height: 60px;
+      margin-bottom: 8px;
+    }
+    .org-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+    .org-sub {
+      font-size: 0.8rem;
+      color: var(--text-gray);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--blue-deeper);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.82rem;
+      line-height: 1.8;
+    }
+    footer strong { color: white; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      section { padding: 50px 16px; }
+      .hero { padding: 80px 16px 100px; }
+      .contact-box { flex-direction: column; }
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(0,119,182,0.92);
+      backdrop-filter: blur(12px);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      color: white;
+      font-weight: 900;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: var(--yellow); }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--yellow); }
+    @media (max-width: 560px) {
+      .nav-links { display: none; }
+    }
+
+    /* scroll padding for fixed nav */
+    :target { scroll-margin-top: 70px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><span>수(水)상한</span> 페스티벌</div>
+  <ul class="nav-links">
+    <li><a href="#programs">프로그램</a></li>
+    <li><a href="#schedule">일정표</a></li>
+    <li><a href="#register">신청하기</a></li>
+    <li><a href="#location">오시는 길</a></li>
+    <li><a href="#contact">문의</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+
+  <span class="hero-badge">🎉 2026 와~다다다 가족 축제</span>
+  <p class="hero-subtitle">물(水)만난 우리가족!</p>
+  <h1 class="hero-title"><span class="water">수(水)</span>상한<br>페스티벌</h1>
+  <p class="hero-name">다양한 가족이 다 함께 다 모이는 와~다다다 가족 축제</p>
+
+  <div class="hero-info-row">
+    <div class="hero-info-item">
+      <span class="label">📅 일시</span>
+      2026년 7월 25일(토) ~ 26일(일)<br>오전 10:00 ~ 오후 5:00
+    </div>
+    <div class="hero-info-item">
+      <span class="label">📍 장소</span>
+      한국소리문화의전당<br>놀이마당 일원
+    </div>
+    <div class="hero-info-item">
+      <span class="label">💰 참가비</span>
+      전체 무료 입장
+    </div>
+  </div>
+
+  <a href="#register" class="btn-hero-register">지금 바로 신청하기 &rarr;</a>
+
+  <a href="#programs" class="hero-scroll">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    아래로 스크롤
+  </a>
+</section>
+
+<!-- WAVE 1 -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#E0F7FA"/>
+  </svg>
+</div>
+
+<!-- PROGRAMS -->
+<section class="programs-bg" id="programs">
+  <div class="section-inner">
+    <span class="section-tag">PROGRAMS</span>
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:40px;">
+      <h2 class="section-title" style="margin-bottom:0;">축제 <span>프로그램</span> 안내</h2>
+      <a href="#register" class="btn-program-apply">지금 바로 신청하기 &rarr;</a>
+    </div>
+
+    <div class="program-grid">
+
+      <div class="program-card highlight">
+        <div class="program-icon">🎤</div>
+        <span class="tag-small">무대 공연 · 사전 신청</span>
+        <h3>가족 장기자랑</h3>
+        <p>
+          우리 가족만의 끼와 재능을 무대 위에서 펼쳐보세요!<br>
+          참가만 해도 푸짐한 선물이!!
+          <br><br>
+          <strong>참여 기준:</strong> 3인 이상 가족 또는 단체 (개인 신청 불가)
+        </p>
+      </div>
+
+      <div class="program-card highlight">
+        <div class="program-icon">🦑</div>
+        <span class="tag-small">무대 레크레이션 · 사전 신청</span>
+        <h3>가족 오징어게임</h3>
+        <p>
+          가족이 함께 릴레이 미션에 도전! 제한 시간 안에 완주하면 선물이 팡팡!
+          <br><br>
+          <strong>참여 기준:</strong> 3인 이상 가족 단위<br>
+          <strong>모집 규모:</strong> 선착순 20팀
+        </p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">🏮</div>
+        <span class="tag-small">체험 부스 · 현장 참여</span>
+        <h3>네팔 전통놀이 체험</h3>
+        <p>
+          네팔 전통 제기차기와 뽑기 기계 미션에 도전!<br>
+          미션 성공 시 선물 증정!!
+        </p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">👨‍👩‍👧</div>
+        <span class="tag-small">체험 부스 · 현장 참여</span>
+        <h3>공동육아나눔터 부스</h3>
+        <p>
+          스티커 부착 체험 활동과 물총으로 모기 페트병 쓰러뜨리기!<br>
+          미션 성공 시 선물 증정!!
+        </p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">💦</div>
+        <span class="tag-small">현장 선착순 · 무료</span>
+        <h3>아쿠아 수영장 &amp; 서바이벌 물총대전</h3>
+        <p>
+          시원한 아쿠아 수영장과 짜릿한 물총 서바이벌!<br>
+          현장 선착순 무료 입장 · 참여 가능합니다.
+        </p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">🍽️</div>
+        <span class="tag-small">푸드트럭 · 현장 운영</span>
+        <h3>푸드트럭 먹거리 존</h3>
+        <p>
+          축제 현장에서 즐기는 다양한 먹거리!<br>
+          한식, 분식, 이색 음료까지 다채로운 푸드트럭이 여러분을 기다립니다.<br><br>
+          행사 기간 내내 운영되며, 즐거운 축제의 맛을 더해드립니다.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WAVE 2 -->
+<div class="wave-divider" style="background:#E0F7FA;">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,20 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#FFFFFF"/>
+  </svg>
+</div>
+
+<!-- SCHEDULE -->
+<section class="schedule-bg" id="schedule">
+  <div class="section-inner">
+    <span class="section-tag">SCHEDULE</span>
+    <h2 class="section-title">행사 <span>일정표</span></h2>
+
+    <div class="schedule-tabs">
+      <button class="tab-btn active" onclick="switchTab('day1', this)">📅 7월 25일 (토)</button>
+      <button class="tab-btn" onclick="switchTab('day2', this)">📅 7월 26일 (일)</button>
+    </div>
+
+    <!-- DAY 1 -->
+    <div id="day1" class="tab-content active">
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-time">10:00 ~ 13:00</div>
+          <div class="timeline-box">
+            <h4>🎭 무대 프로그램</h4>
+            <ul>
+              <li>🎉 오프닝 공연</li>
+              <li>🎤 장기자랑 무대 공연</li>
+              <li>🦑 가족 오징어게임 진행</li>
+              <li>🏆 축하공연 및 시상식</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item always">
+          <div class="timeline-time">10:00 ~ 17:00 (상시 운영)</div>
+          <div class="timeline-box">
+            <h4>🎪 체험부스 &amp; 물놀이</h4>
+            <ul>
+              <li>네팔 전통놀이 체험부스</li>
+              <li>공동육아나눔터 부스</li>
+              <li>아쿠아 수영장 &amp; 서바이벌 물총대전</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <p style="margin-top:20px; font-size:0.82rem; color:#888;">※ 일정은 현장 상황에 따라 변동될 수 있습니다.</p>
+    </div>
+
+    <!-- DAY 2 -->
+    <div id="day2" class="tab-content">
+      <div class="timeline">
+
+        <div class="timeline-item always">
+          <div class="timeline-time">10:00 ~ 17:00 (상시 운영)</div>
+          <div class="timeline-box">
+            <h4>🎪 체험부스 &amp; 물놀이</h4>
+            <ul>
+              <li>네팔 전통놀이 체험부스</li>
+              <li>공동육아나눔터 부스</li>
+              <li>아쿠아 수영장 &amp; 서바이벌 물총대전</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <p style="margin-top:20px; font-size:0.82rem; color:#888;">※ 26일(일)은 체험부스와 물놀이 프로그램이 10:00~17:00 운영됩니다.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- WAVE 3 -->
+<div class="wave-divider" style="background:white;">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z" fill="#023E8A"/>
+  </svg>
+</div>
+
+<!-- REGISTRATION -->
+<section class="register-bg" id="register">
+  <div class="section-inner">
+    <span class="section-tag">REGISTRATION</span>
+    <h2 class="section-title">지금 바로 <span>신청</span>하세요!</h2>
+    <p class="register-desc">
+      장기자랑과 오징어게임은 사전 신청이 필요합니다.<br>
+      신청 마감 전에 서둘러 접수해 주세요!
+    </p>
+
+    <div class="register-grid">
+
+      <div class="register-card">
+        <div class="r-icon">📝</div>
+        <h3>축제 참여 신청</h3>
+        <p>행사 참여 신청서를 작성해 주세요.<br>참여 확정 후 안내 연락드립니다.</p>
+        <a href="#" class="btn-register disabled">신청 링크 준비 중</a>
+      </div>
+
+      <div class="register-card">
+        <div class="r-icon">🎤</div>
+        <h3>가족 장기자랑 신청</h3>
+        <p>3인 이상 가족 또는 단체 참여 가능<br>데모 영상 제출 후 심사를 통해 10팀 선정</p>
+        <span class="r-note">※ 개인 신청 불가</span>
+        <a href="#" class="btn-register disabled">신청 링크 준비 중</a>
+      </div>
+
+      <div class="register-card">
+        <div class="r-icon">🦑</div>
+        <h3>가족 오징어게임 신청</h3>
+        <p>3인 이상 가족 단위 참여<br>선착순 20팀 모집 · 조기 마감 예상!</p>
+        <span class="r-note">⚡ 선착순 마감</span>
+        <a href="#" class="btn-register disabled">신청 링크 준비 중</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WAVE 4 -->
+<div class="wave-divider" style="background:#023E8A;">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,20 C720,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F0F9FF"/>
+  </svg>
+</div>
+
+<!-- LOCATION -->
+<section class="location-bg" id="location">
+  <div class="section-inner">
+    <span class="section-tag">LOCATION</span>
+    <h2 class="section-title">찾아오는 <span>길</span></h2>
+
+    <div class="location-grid">
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=35.8561114,127.1382417&z=16&output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="한국소리문화의전당 지도">
+        </iframe>
+      </div>
+
+      <div class="location-info">
+        <h3>한국소리문화의전당 놀이마당</h3>
+
+        <div class="location-detail">
+          <span class="l-icon">📍</span>
+          <div>
+            <strong>주소</strong>
+            전북특별자치도 전주시 덕진구 소리로 31
+          </div>
+        </div>
+
+        <div class="location-detail">
+          <span class="l-icon">🚌</span>
+          <div>
+            <strong>버스 이용 시</strong>
+            전주 시내버스 이용 후 '한국소리문화의전당' 정류장 하차
+          </div>
+        </div>
+
+        <div class="location-detail">
+          <span class="l-icon">🚗</span>
+          <div>
+            <strong>자가용 이용 시</strong>
+            한국소리문화의전당 내 주차장 이용<br>
+            (주차 여건에 따라 혼잡 예상, 대중교통 권장)
+          </div>
+        </div>
+
+        <div class="location-detail">
+          <span class="l-icon">🎪</span>
+          <div>
+            <strong>행사 장소</strong>
+            한국소리문화의전당 놀이마당 일원
+          </div>
+        </div>
+
+        <a href="https://www.google.com/maps/place/%ED%95%9C%EA%B5%AD%EC%86%8C%EB%A6%AC%EB%AC%B8%ED%99%94%EC%9D%98%EC%A0%84%EB%8B%B9/data=!3m1!4b1!4m6!3m5!1s0x3570232636de045b:0xd647e59494f03aca!8m2!3d35.8561114!4d127.1382417!16s%2Fg%2F122pdg3b?entry=ttu&g_ep=EgoyMDI2MDYyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-map">
+          🗺️ 구글 지도에서 보기
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-bg" id="contact">
+  <div class="section-inner">
+    <span class="section-tag">CONTACT</span>
+    <h2 class="section-title">문의 <span>안내</span></h2>
+
+    <div class="contact-box">
+      <div class="contact-info">
+        <h3>전주시가족센터</h3>
+        <div class="contact-item">
+          <span class="c-icon">📞</span>
+          <span>전화: <a href="tel:063-243-0333">063-243-0333</a> &nbsp;|&nbsp; ✉️ 이메일: <a href="mailto:jjfc25@jjfc.kr">jjfc25@jjfc.kr</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="c-icon">🏢</span>
+          <span>전북특별자치도 전주시 덕진구 팔달로 336 (6층) &nbsp;|&nbsp; 🌐 <a href="https://jeonju.familynet.or.kr" target="_blank">jeonju.familynet.or.kr</a></span>
+        </div>
+      </div>
+
+      <div class="contact-org" style="text-align:center; min-width:160px;">
+        
+        <div class="org-name">전주시가족센터</div>
+        <div class="org-sub">JEONJU FAMILY CENTER</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>2026 와~다다다 가족 축제 | 수(水)상한 페스티벌</strong></p>
+  <p>2026년 7월 25일(토) ~ 26일(일) 10:00~17:00 · 한국소리문화의전당 놀이마당 일원</p>
+  <p style="margin-top:8px;">주최 · 주관: 전주시가족센터, (사)한국축제이벤트협회 전북특별자치도회</p>
+  <p style="margin-top:6px; opacity:0.6; font-size:0.75rem;">문의: 063-243-0333 | jjfc25@jjfc.kr</p>
+</footer>
+
+<script>
+  function switchTab(tabId, btn) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
